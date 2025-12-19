@@ -29,6 +29,14 @@ import CameraLivePage from "./pages/CameraLivePage";
 import HomeModePage from "./pages/HomeModePage";
 import ActivityAnalysisPage from "./pages/ActivityAnalysisPage";
 import AlarmSettingsPage from "./pages/AlarmSettingsPage";
+import ExpertDecisionPage from "./pages/ExpertDecisionPage";
+import MLTrainingPage from "./pages/MLTrainingPage";
+import FaceDetailPage from "./pages/FaceDetailPage";
+import CameraViewPage from "./pages/CameraViewPage";
+import NotificationDetailPage from "./pages/NotificationDetailPage";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
+import VerifyOTPPage from "./pages/VerifyOTPPage";
+import FAQPage from "./pages/FAQPage";
 import GenericDetailPage from "./pages/GenericDetailPage";
 
 const queryClient = new QueryClient();
@@ -67,6 +75,16 @@ const App = () => (
           <Route path="/home-mode" element={<HomeModePage />} />
           <Route path="/activity-analysis" element={<ActivityAnalysisPage />} />
           <Route path="/alarm-settings" element={<AlarmSettingsPage />} />
+          
+          {/* Detail Pages */}
+          <Route path="/expert-decision/:id" element={<ExpertDecisionPage />} />
+          <Route path="/ml-training" element={<MLTrainingPage />} />
+          <Route path="/dl-face-detail/:id" element={<FaceDetailPage />} />
+          <Route path="/camera-view/:id" element={<CameraViewPage />} />
+          <Route path="/notification/:id" element={<NotificationDetailPage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} />
+          <Route path="/verify-otp" element={<VerifyOTPPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           
           {/* Generic detail routes for all interactive elements */}
           <Route path="/:page" element={<GenericDetailPage />} />
