@@ -24,7 +24,11 @@ import StatisticsPage from "./pages/StatisticsPage";
 import ProfilePage from "./pages/ProfilePage";
 import SecurityAnalysis from "./pages/SecurityAnalysis";
 import SensorDoorPage from "./pages/SensorDoorPage";
+import SensorMotionPage from "./pages/SensorMotionPage";
 import CameraLivePage from "./pages/CameraLivePage";
+import HomeModePage from "./pages/HomeModePage";
+import ActivityAnalysisPage from "./pages/ActivityAnalysisPage";
+import AlarmSettingsPage from "./pages/AlarmSettingsPage";
 import GenericDetailPage from "./pages/GenericDetailPage";
 
 const queryClient = new QueryClient();
@@ -58,7 +62,11 @@ const App = () => (
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/security-analysis" element={<SecurityAnalysis />} />
           <Route path="/sensor-door" element={<SensorDoorPage />} />
+          <Route path="/sensor-motion" element={<SensorMotionPage />} />
           <Route path="/camera-live" element={<CameraLivePage />} />
+          <Route path="/home-mode" element={<HomeModePage />} />
+          <Route path="/activity-analysis" element={<ActivityAnalysisPage />} />
+          <Route path="/alarm-settings" element={<AlarmSettingsPage />} />
           
           {/* Generic detail routes for all interactive elements */}
           <Route path="/:page" element={<GenericDetailPage />} />
