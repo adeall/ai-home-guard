@@ -37,7 +37,7 @@ import NotificationDetailPage from "./pages/NotificationDetailPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import VerifyOTPPage from "./pages/VerifyOTPPage";
 import FAQPage from "./pages/FAQPage";
-import GenericDetailPage from "./pages/GenericDetailPage";
+import SmartDetailPage from "./pages/SmartDetailPage";
 import ProfileDetailPage from "./pages/ProfileDetailPage";
 import AccountSecurityPage from "./pages/AccountSecurityPage";
 import ConnectedDevicesPage from "./pages/ConnectedDevicesPage";
@@ -112,10 +112,10 @@ const App = () => (
           <Route path="/about-app" element={<AboutAppPage />} />
           <Route path="/logout-confirm" element={<LogoutConfirmPage />} />
           
-          {/* Generic detail routes for all interactive elements */}
-          <Route path="/:page" element={<GenericDetailPage />} />
-          <Route path="/:page/:id" element={<GenericDetailPage />} />
-          <Route path="/:page/:id/:subpage" element={<GenericDetailPage />} />
+          {/* Smart dynamic detail routes for all interactive elements */}
+          <Route path="/:page" element={<SmartDetailPage />} />
+          <Route path="/:page/:id" element={<SmartDetailPage />} />
+          <Route path="/:page/:id/:subpage" element={<SmartDetailPage />} />
           
           <Route path="*" element={<NotFound />} />
         </Routes>
