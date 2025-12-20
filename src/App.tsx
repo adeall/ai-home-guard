@@ -38,6 +38,18 @@ import ResetPasswordPage from "./pages/ResetPasswordPage";
 import VerifyOTPPage from "./pages/VerifyOTPPage";
 import FAQPage from "./pages/FAQPage";
 import GenericDetailPage from "./pages/GenericDetailPage";
+import ProfileDetailPage from "./pages/ProfileDetailPage";
+import AccountSecurityPage from "./pages/AccountSecurityPage";
+import ConnectedDevicesPage from "./pages/ConnectedDevicesPage";
+import SensorManagementPage from "./pages/SensorManagementPage";
+import AlarmSensitivityPage from "./pages/AlarmSensitivityPage";
+import SecurityModesPage from "./pages/SecurityModesPage";
+import NotificationSettingsPage from "./pages/NotificationSettingsPage";
+import ThemePreviewPage from "./pages/ThemePreviewPage";
+import LanguageSettingsPage from "./pages/LanguageSettingsPage";
+import HelpFaqPage from "./pages/HelpFaqPage";
+import AboutAppPage from "./pages/AboutAppPage";
+import LogoutConfirmPage from "./pages/LogoutConfirmPage";
 
 const queryClient = new QueryClient();
 
@@ -85,6 +97,20 @@ const App = () => (
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="/verify-otp" element={<VerifyOTPPage />} />
           <Route path="/faq" element={<FAQPage />} />
+          
+          {/* Settings Detail Pages */}
+          <Route path="/profile-detail" element={<ProfileDetailPage />} />
+          <Route path="/account-security" element={<AccountSecurityPage />} />
+          <Route path="/connected-devices" element={<ConnectedDevicesPage />} />
+          <Route path="/sensor-management" element={<SensorManagementPage />} />
+          <Route path="/alarm-sensitivity" element={<AlarmSensitivityPage />} />
+          <Route path="/security-modes" element={<SecurityModesPage />} />
+          <Route path="/notification-settings" element={<NotificationSettingsPage />} />
+          <Route path="/theme-preview" element={<ThemePreviewPage />} />
+          <Route path="/language-settings" element={<LanguageSettingsPage />} />
+          <Route path="/help-faq" element={<HelpFaqPage />} />
+          <Route path="/about-app" element={<AboutAppPage />} />
+          <Route path="/logout-confirm" element={<LogoutConfirmPage />} />
           
           {/* Generic detail routes for all interactive elements */}
           <Route path="/:page" element={<GenericDetailPage />} />
