@@ -50,6 +50,7 @@ import LanguageSettingsPage from "./pages/LanguageSettingsPage";
 import HelpFaqPage from "./pages/HelpFaqPage";
 import AboutAppPage from "./pages/AboutAppPage";
 import LogoutConfirmPage from "./pages/LogoutConfirmPage";
+import ExpertKnowledgePage from "./pages/ExpertKnowledgePage";
 
 const queryClient = new QueryClient();
 
@@ -90,6 +91,7 @@ const App = () => (
           
           {/* Detail Pages */}
           <Route path="/expert-decision/:id" element={<ExpertDecisionPage />} />
+          <Route path="/expert-knowledge" element={<ExpertKnowledgePage />} />
           <Route path="/ml-training" element={<MLTrainingPage />} />
           <Route path="/dl-face-detail/:id" element={<FaceDetailPage />} />
           <Route path="/camera-view/:id" element={<CameraViewPage />} />
