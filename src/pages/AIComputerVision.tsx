@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Eye, Camera, Box, MapPin, ChevronRight, Settings2, Play, Square } from "lucide-react";
+import { ArrowLeft, Eye, Camera, Box, MapPin, ChevronRight, Settings2, Play, Square, Flame, ShieldAlert, Users, Car, Package, AlertTriangle, Footprints, Moon } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 
 const AIComputerVision = () => {
   const navigate = useNavigate();
@@ -22,6 +23,23 @@ const AIComputerVision = () => {
     { id: 1, name: "Area Pagar Depan", active: true, alerts: 5 },
     { id: 2, name: "Pintu Masuk", active: true, alerts: 12 },
     { id: 3, name: "Taman Belakang", active: false, alerts: 0 },
+  ];
+
+  const smartDetections = [
+    { id: 1, name: "Deteksi Kebakaran", icon: Flame, active: true, color: "text-orange-500", bgColor: "bg-orange-500/20", description: "Mendeteksi api dan asap" },
+    { id: 2, name: "Deteksi Pencurian", icon: ShieldAlert, active: true, color: "text-red-500", bgColor: "bg-red-500/20", description: "Mendeteksi aktivitas mencurigakan" },
+    { id: 3, name: "Deteksi Kerumunan", icon: Users, active: false, color: "text-blue-500", bgColor: "bg-blue-500/20", description: "Mendeteksi kerumunan orang" },
+    { id: 4, name: "Deteksi Kendaraan", icon: Car, active: true, color: "text-green-500", bgColor: "bg-green-500/20", description: "Mendeteksi kendaraan asing" },
+    { id: 5, name: "Deteksi Paket", icon: Package, active: false, color: "text-purple-500", bgColor: "bg-purple-500/20", description: "Mendeteksi paket ditinggalkan" },
+    { id: 6, name: "Deteksi Penyusup", icon: Footprints, active: true, color: "text-yellow-500", bgColor: "bg-yellow-500/20", description: "Mendeteksi orang asing masuk" },
+    { id: 7, name: "Deteksi Malam", icon: Moon, active: true, color: "text-indigo-500", bgColor: "bg-indigo-500/20", description: "Mode penglihatan malam" },
+    { id: 8, name: "Deteksi Bahaya", icon: AlertTriangle, active: false, color: "text-amber-500", bgColor: "bg-amber-500/20", description: "Mendeteksi situasi berbahaya" },
+  ];
+
+  const recentAlerts = [
+    { id: 1, type: "Asap Terdeteksi", location: "Dapur", time: "2 menit lalu", severity: "high", icon: Flame },
+    { id: 2, type: "Orang Asing", location: "Pagar Depan", time: "15 menit lalu", severity: "medium", icon: ShieldAlert },
+    { id: 3, type: "Kendaraan Tidak Dikenal", location: "Garasi", time: "1 jam lalu", severity: "low", icon: Car },
   ];
 
   return (
@@ -73,6 +91,68 @@ const AIComputerVision = () => {
                     <span className={`w-2 h-2 rounded-full ${cam.status === "online" ? "bg-green-500" : "bg-red-500"}`} />
                     <ChevronRight className="w-5 h-5 text-muted-foreground" />
                   </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Smart Detection Features */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+            <ShieldAlert className="w-5 h-5 text-primary" />
+            Deteksi Cerdas
+          </h3>
+          <div className="grid grid-cols-2 gap-2">
+            {smartDetections.map((detection) => (
+              <Card key={detection.id} className="p-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${detection.bgColor}`}>
+                      <detection.icon className={`w-4 h-4 ${detection.color}`} />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium leading-tight">{detection.name}</p>
+                      <p className="text-xs text-muted-foreground">{detection.description}</p>
+                    </div>
+                  </div>
+                  <Switch checked={detection.active} />
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Recent Alerts */}
+        <div>
+          <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+            <AlertTriangle className="w-5 h-5 text-primary" />
+            Peringatan Terbaru
+          </h3>
+          <div className="space-y-2">
+            {recentAlerts.map((alert) => (
+              <Card
+                key={alert.id}
+                variant="interactive"
+                onClick={() => navigate(`/cv-alert/${alert.id}`)}
+              >
+                <CardContent className="p-4 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+                      alert.severity === "high" ? "bg-red-500/20" : 
+                      alert.severity === "medium" ? "bg-yellow-500/20" : "bg-green-500/20"
+                    }`}>
+                      <alert.icon className={`w-5 h-5 ${
+                        alert.severity === "high" ? "text-red-400" : 
+                        alert.severity === "medium" ? "text-yellow-400" : "text-green-400"
+                      }`} />
+                    </div>
+                    <div>
+                      <p className="font-medium">{alert.type}</p>
+                      <p className="text-xs text-muted-foreground">{alert.location} • {alert.time}</p>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-muted-foreground" />
                 </CardContent>
               </Card>
             ))}
