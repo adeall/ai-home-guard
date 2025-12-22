@@ -52,6 +52,52 @@ import AboutAppPage from "./pages/AboutAppPage";
 import LogoutConfirmPage from "./pages/LogoutConfirmPage";
 import ExpertKnowledgePage from "./pages/ExpertKnowledgePage";
 
+// New dedicated pages (to avoid falling into GenericDetailPage)
+import AIModuleInfoPage from "./pages/AIModuleInfoPage";
+import ValueInnovationPage from "./pages/ValueInnovationPage";
+import ValueTrustPage from "./pages/ValueTrustPage";
+import ValueCommunityPage from "./pages/ValueCommunityPage";
+import ValueExcellencePage from "./pages/ValueExcellencePage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsOfServicePage from "./pages/TermsOfServicePage";
+import LicensesPage from "./pages/LicensesPage";
+
+import ExpertOverviewPage from "./pages/ExpertOverviewPage";
+import ExpertWhyPage from "./pages/ExpertWhyPage";
+import ExpertActionPage from "./pages/ExpertActionPage";
+import ExpertSettingsPage from "./pages/ExpertSettingsPage";
+import ExpertAddRulePage from "./pages/ExpertAddRulePage";
+import ExpertRuleDetailPage from "./pages/ExpertRuleDetailPage";
+
+import CVObjectDetailPage from "./pages/CVObjectDetailPage";
+import CVAlertDetailPage from "./pages/CVAlertDetailPage";
+import CVBoundarySettingsPage from "./pages/CVBoundarySettingsPage";
+import CVBoundaryDetailPage from "./pages/CVBoundaryDetailPage";
+import CVAddBoundaryPage from "./pages/CVAddBoundaryPage";
+
+import SensorDoorSettingsPage from "./pages/SensorDoorSettingsPage";
+import LockAllDoorsPage from "./pages/LockAllDoorsPage";
+import UnlockConfirmPage from "./pages/UnlockConfirmPage";
+import DoorDetailPage from "./pages/DoorDetailPage";
+import DoorLogsPage from "./pages/DoorLogsPage";
+import DoorLogDetailPage from "./pages/DoorLogDetailPage";
+
+import MotionSettingsPage from "./pages/MotionSettingsPage";
+import MotionCalibrationPage from "./pages/MotionCalibrationPage";
+import MotionHistoryPage from "./pages/MotionHistoryPage";
+import MotionDetailPage from "./pages/MotionDetailPage";
+import SensorMotionSettingsPage from "./pages/SensorMotionSettingsPage";
+
+import CameraSettingsPage from "./pages/CameraSettingsPage";
+import CameraFullscreenPage from "./pages/CameraFullscreenPage";
+import CameraDetailPage from "./pages/CameraDetailPage";
+import CameraRecordingsPage from "./pages/CameraRecordingsPage";
+
+import RateAppPage from "./pages/RateAppPage";
+import DLStrangersPage from "./pages/DLStrangersPage";
+import MLModelInfoPage from "./pages/MLModelInfoPage";
+import NotificationHistoryPage from "./pages/NotificationHistoryPage";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -108,12 +154,68 @@ const App = () => (
           <Route path="/alarm-sensitivity" element={<AlarmSensitivityPage />} />
           <Route path="/security-modes" element={<SecurityModesPage />} />
           <Route path="/notification-settings" element={<NotificationSettingsPage />} />
-          <Route path="/theme-preview" element={<ThemePreviewPage />} />
-          <Route path="/language-settings" element={<LanguageSettingsPage />} />
           <Route path="/help-faq" element={<HelpFaqPage />} />
           <Route path="/about-app" element={<AboutAppPage />} />
           <Route path="/logout-confirm" element={<LogoutConfirmPage />} />
-          
+
+          {/* About / Legal */}
+          <Route path="/rate-app" element={<RateAppPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsOfServicePage />} />
+          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+          <Route path="/licenses" element={<LicensesPage />} />
+
+          {/* About module details */}
+          <Route path="/ai-module-info/:id" element={<AIModuleInfoPage />} />
+
+          {/* Values */}
+          <Route path="/value-innovation" element={<ValueInnovationPage />} />
+          <Route path="/value-trust" element={<ValueTrustPage />} />
+          <Route path="/value-community" element={<ValueCommunityPage />} />
+          <Route path="/value-excellence" element={<ValueExcellencePage />} />
+
+          {/* Expert System */}
+          <Route path="/expert-overview" element={<ExpertOverviewPage />} />
+          <Route path="/expert-why/:id" element={<ExpertWhyPage />} />
+          <Route path="/expert-action/:id" element={<ExpertActionPage />} />
+          <Route path="/expert-settings" element={<ExpertSettingsPage />} />
+          <Route path="/expert-add-rule" element={<ExpertAddRulePage />} />
+          <Route path="/expert-rule/:id" element={<ExpertRuleDetailPage />} />
+
+          {/* Computer Vision */}
+          <Route path="/cv-object/:id" element={<CVObjectDetailPage />} />
+          <Route path="/cv-alert/:id" element={<CVAlertDetailPage />} />
+          <Route path="/cv-boundary-settings" element={<CVBoundarySettingsPage />} />
+          <Route path="/cv-boundary/:id" element={<CVBoundaryDetailPage />} />
+          <Route path="/cv-add-boundary" element={<CVAddBoundaryPage />} />
+
+          {/* Sensor Door */}
+          <Route path="/sensor-door-settings" element={<SensorDoorSettingsPage />} />
+          <Route path="/lock-all-doors" element={<LockAllDoorsPage />} />
+          <Route path="/unlock-confirm" element={<UnlockConfirmPage />} />
+          <Route path="/door-detail/:id" element={<DoorDetailPage />} />
+          <Route path="/door-logs" element={<DoorLogsPage />} />
+          <Route path="/door-log/:id" element={<DoorLogDetailPage />} />
+
+          {/* Sensor Motion */}
+          <Route path="/sensor-motion/:id/settings" element={<SensorMotionSettingsPage />} />
+          <Route path="/motion-history" element={<MotionHistoryPage />} />
+          <Route path="/motion-detail/:id" element={<MotionDetailPage />} />
+          <Route path="/motion-settings" element={<MotionSettingsPage />} />
+          <Route path="/motion-calibration" element={<MotionCalibrationPage />} />
+
+          {/* Camera */}
+          <Route path="/camera-settings" element={<CameraSettingsPage />} />
+          <Route path="/camera-fullscreen/:id" element={<CameraFullscreenPage />} />
+          <Route path="/camera-detail/:id" element={<CameraDetailPage />} />
+          <Route path="/camera-recordings" element={<CameraRecordingsPage />} />
+
+          {/* Notifications */}
+          <Route path="/dl-strangers" element={<DLStrangersPage />} />
+          <Route path="/ml-model-info" element={<MLModelInfoPage />} />
+          <Route path="/notification-history" element={<NotificationHistoryPage />} />
+
           {/* Generic detail routes for all interactive elements */}
           <Route path="/:page" element={<GenericDetailPage />} />
           <Route path="/:page/:id" element={<GenericDetailPage />} />
