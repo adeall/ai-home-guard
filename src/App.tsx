@@ -98,6 +98,30 @@ import DLStrangersPage from "./pages/DLStrangersPage";
 import MLModelInfoPage from "./pages/MLModelInfoPage";
 import NotificationHistoryPage from "./pages/NotificationHistoryPage";
 
+// Support & Profile extra pages (avoid GenericDetailPage fallbacks)
+import LiveChatSupportPage from "./pages/LiveChatSupportPage";
+import EmailSupportPage from "./pages/EmailSupportPage";
+import PhoneSupportPage from "./pages/PhoneSupportPage";
+import SecurityHistoryPage from "./pages/SecurityHistoryPage";
+import AccountSettingsPage from "./pages/AccountSettingsPage";
+import EditProfilePage from "./pages/EditProfilePage";
+import EditAvatarPage from "./pages/EditAvatarPage";
+
+// Security/Activity extra pages
+import NetworkStatusPage from "./pages/NetworkStatusPage";
+import ActivityHistoryPage from "./pages/ActivityHistoryPage";
+import EventDetailPage from "./pages/EventDetailPage";
+
+// Deep Learning drill-down pages
+import DLEditFacePage from "./pages/DLEditFacePage";
+import DLDeleteFacePage from "./pages/DLDeleteFacePage";
+import DLDetectionsPage from "./pages/DLDetectionsPage";
+import DLLocationsPage from "./pages/DLLocationsPage";
+import DLDetectionDetailPage from "./pages/DLDetectionDetailPage";
+import DLRetrainPage from "./pages/DLRetrainPage";
+import DLPhotosPage from "./pages/DLPhotosPage";
+import LocationDetailPage from "./pages/LocationDetailPage";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -154,9 +178,27 @@ const App = () => (
           <Route path="/alarm-sensitivity" element={<AlarmSensitivityPage />} />
           <Route path="/security-modes" element={<SecurityModesPage />} />
           <Route path="/notification-settings" element={<NotificationSettingsPage />} />
+          <Route path="/theme-preview" element={<ThemePreviewPage />} />
+          <Route path="/language-settings" element={<LanguageSettingsPage />} />
           <Route path="/help-faq" element={<HelpFaqPage />} />
           <Route path="/about-app" element={<AboutAppPage />} />
           <Route path="/logout-confirm" element={<LogoutConfirmPage />} />
+
+          {/* Support */}
+          <Route path="/live-chat" element={<LiveChatSupportPage />} />
+          <Route path="/email-support" element={<EmailSupportPage />} />
+          <Route path="/phone-support" element={<PhoneSupportPage />} />
+
+          {/* Profile extras */}
+          <Route path="/security-history" element={<SecurityHistoryPage />} />
+          <Route path="/account-settings" element={<AccountSettingsPage />} />
+          <Route path="/edit-profile" element={<EditProfilePage />} />
+          <Route path="/edit-avatar" element={<EditAvatarPage />} />
+
+          {/* Security/Activity extras */}
+          <Route path="/network-status" element={<NetworkStatusPage />} />
+          <Route path="/activity-history" element={<ActivityHistoryPage />} />
+          <Route path="/event-detail/:id" element={<EventDetailPage />} />
 
           {/* About / Legal */}
           <Route path="/rate-app" element={<RateAppPage />} />
@@ -215,6 +257,18 @@ const App = () => (
           <Route path="/dl-strangers" element={<DLStrangersPage />} />
           <Route path="/ml-model-info" element={<MLModelInfoPage />} />
           <Route path="/notification-history" element={<NotificationHistoryPage />} />
+
+          {/* Deep Learning drill-down */}
+          <Route path="/dl-edit-face/:id" element={<DLEditFacePage />} />
+          <Route path="/dl-delete-face/:id" element={<DLDeleteFacePage />} />
+          <Route path="/dl-detections/:id" element={<DLDetectionsPage />} />
+          <Route path="/dl-locations/:id" element={<DLLocationsPage />} />
+          <Route path="/dl-detection/:id" element={<DLDetectionDetailPage />} />
+          <Route path="/dl-retrain/:id" element={<DLRetrainPage />} />
+          <Route path="/dl-photos/:id" element={<DLPhotosPage />} />
+
+          {/* Location */}
+          <Route path="/location/:slug" element={<LocationDetailPage />} />
 
           {/* Generic detail routes for all interactive elements */}
           <Route path="/:page" element={<GenericDetailPage />} />
