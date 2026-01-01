@@ -5,15 +5,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
+import { DateRange } from "react-day-picker";
 
 const DateRangePickerPage = () => {
-  const [range, setRange] = useState<{ from?: Date; to?: Date }>({});
+  const [range, setRange] = useState<DateRange | undefined>(undefined);
 
   const label = useMemo(() => {
-    if (!range.from) return "Belum dipilih";
-    if (!range.to) return "Pilih tanggal akhir";
+    if (!range?.from) return "Belum dipilih";
+    if (!range?.to) return "Pilih tanggal akhir";
     return `${range.from.toLocaleDateString()} – ${range.to.toLocaleDateString()}`;
-  }, [range.from, range.to]);
+  }, [range]);
 
   const apply = () => {
     toast({ title: "Rentang tanggal diterapkan", description: label });
@@ -35,7 +36,7 @@ const DateRangePickerPage = () => {
             <Calendar
               mode="range"
               selected={range}
-              onSelect={(v) => setRange((v as any) ?? {})}
+              onSelect={setRange}
               numberOfMonths={1}
             />
             <Button className="w-full" onClick={apply}>
