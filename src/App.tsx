@@ -121,6 +121,11 @@ import ActivityHistoryPage from "./pages/ActivityHistoryPage";
 import EventDetailPage from "./pages/EventDetailPage";
 
 // Deep Learning drill-down pages
+import DLFacesRegisteredPage from "./pages/DLFacesRegisteredPage";
+import DLDetectionsOverviewPage from "./pages/DLDetectionsOverviewPage";
+import DLConfidencePage from "./pages/DLConfidencePage";
+import DLActivityDetailPage from "./pages/DLActivityDetailPage";
+import DLAddFacePage from "./pages/DLAddFacePage";
 import DLEditFacePage from "./pages/DLEditFacePage";
 import DLDeleteFacePage from "./pages/DLDeleteFacePage";
 import DLDetectionsPage from "./pages/DLDetectionsPage";
@@ -129,6 +134,22 @@ import DLDetectionDetailPage from "./pages/DLDetectionDetailPage";
 import DLRetrainPage from "./pages/DLRetrainPage";
 import DLPhotosPage from "./pages/DLPhotosPage";
 import LocationDetailPage from "./pages/LocationDetailPage";
+
+// Home Mode schedules
+import ScheduleSettingsPage from "./pages/ScheduleSettingsPage";
+import ScheduleDetailPage from "./pages/ScheduleDetailPage";
+
+// Actions
+import ActionDetailPage from "./pages/ActionDetailPage";
+
+// Missing-route fix pages
+import DLStrangerDetailPage from "./pages/DLStrangerDetailPage";
+import ExpertRulesUsedPage from "./pages/ExpertRulesUsedPage";
+import ExpertFactsPage from "./pages/ExpertFactsPage";
+import TwoFactorSetupPage from "./pages/TwoFactorSetupPage";
+import AddSensorPage from "./pages/AddSensorPage";
+import SensorSettingsPage from "./pages/SensorSettingsPage";
+import QuietHoursPage from "./pages/QuietHoursPage";
 
 const queryClient = new QueryClient();
 
@@ -173,6 +194,8 @@ const App = () => (
           <Route path="/sensor-motion" element={<SensorMotionPage />} />
           <Route path="/camera-live" element={<CameraLivePage />} />
           <Route path="/home-mode" element={<HomeModePage />} />
+          <Route path="/schedule-settings" element={<ScheduleSettingsPage />} />
+          <Route path="/schedule/:id" element={<ScheduleDetailPage />} />
           <Route path="/mode-details" element={<ModeDetailsPage />} />
           <Route path="/mode-details/:id" element={<ModeDetailsPage />} />
           <Route path="/activity-analysis" element={<ActivityAnalysisPage />} />
@@ -180,11 +203,14 @@ const App = () => (
           
           {/* Detail Pages */}
           <Route path="/expert-decision/:id" element={<ExpertDecisionPage />} />
+          <Route path="/expert-rules/:id" element={<ExpertRulesUsedPage />} />
+          <Route path="/expert-facts/:id" element={<ExpertFactsPage />} />
           <Route path="/expert-knowledge" element={<ExpertKnowledgePage />} />
           <Route path="/ml-training" element={<MLTrainingPage />} />
           <Route path="/dl-face-detail/:id" element={<FaceDetailPage />} />
           <Route path="/camera-view/:id" element={<CameraViewPage />} />
           <Route path="/notification/:id" element={<NotificationDetailPage />} />
+          <Route path="/action/:id" element={<ActionDetailPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="/verify-otp" element={<VerifyOTPPage />} />
           <Route path="/faq" element={<FAQPage />} />
@@ -192,11 +218,15 @@ const App = () => (
           {/* Settings Detail Pages */}
           <Route path="/profile-detail" element={<ProfileDetailPage />} />
           <Route path="/account-security" element={<AccountSecurityPage />} />
+          <Route path="/2fa-setup" element={<TwoFactorSetupPage />} />
           <Route path="/connected-devices" element={<ConnectedDevicesPage />} />
           <Route path="/sensor-management" element={<SensorManagementPage />} />
+          <Route path="/add-sensor" element={<AddSensorPage />} />
+          <Route path="/sensor-settings/:id" element={<SensorSettingsPage />} />
           <Route path="/alarm-sensitivity" element={<AlarmSensitivityPage />} />
           <Route path="/security-modes" element={<SecurityModesPage />} />
           <Route path="/notification-settings" element={<NotificationSettingsPage />} />
+          <Route path="/quiet-hours" element={<QuietHoursPage />} />
           <Route path="/theme-preview" element={<ThemePreviewPage />} />
           <Route path="/language-settings" element={<LanguageSettingsPage />} />
           <Route path="/help-faq" element={<HelpFaqPage />} />
@@ -207,6 +237,11 @@ const App = () => (
           <Route path="/live-chat" element={<LiveChatSupportPage />} />
           <Route path="/email-support" element={<EmailSupportPage />} />
           <Route path="/phone-support" element={<PhoneSupportPage />} />
+          
+          {/* Support aliases (linked from FAQ) */}
+          <Route path="/support-chat" element={<LiveChatSupportPage />} />
+          <Route path="/support-email" element={<EmailSupportPage />} />
+          <Route path="/support-call" element={<PhoneSupportPage />} />
 
           {/* Profile extras */}
           <Route path="/security-history" element={<SecurityHistoryPage />} />
@@ -218,6 +253,7 @@ const App = () => (
           <Route path="/network-status" element={<NetworkStatusPage />} />
           <Route path="/activity-history" element={<ActivityHistoryPage />} />
           <Route path="/event-detail/:id" element={<EventDetailPage />} />
+          <Route path="/event/:id" element={<EventDetailPage />} />
 
           {/* About / Legal */}
           <Route path="/rate-app" element={<RateAppPage />} />
@@ -274,10 +310,16 @@ const App = () => (
 
           {/* Notifications */}
           <Route path="/dl-strangers" element={<DLStrangersPage />} />
+          <Route path="/dl-stranger/:id" element={<DLStrangerDetailPage />} />
           <Route path="/ml-model-info" element={<MLModelInfoPage />} />
           <Route path="/notification-history" element={<NotificationHistoryPage />} />
 
           {/* Deep Learning drill-down */}
+          <Route path="/dl-faces-registered" element={<DLFacesRegisteredPage />} />
+          <Route path="/dl-detections" element={<DLDetectionsOverviewPage />} />
+          <Route path="/dl-confidence/:id" element={<DLConfidencePage />} />
+          <Route path="/dl-activity/:id" element={<DLActivityDetailPage />} />
+          <Route path="/dl-add-face" element={<DLAddFacePage />} />
           <Route path="/dl-edit-face/:id" element={<DLEditFacePage />} />
           <Route path="/dl-delete-face/:id" element={<DLDeleteFacePage />} />
           <Route path="/dl-detections/:id" element={<DLDetectionsPage />} />
