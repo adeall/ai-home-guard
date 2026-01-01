@@ -15,18 +15,26 @@ import AboutPage from "./pages/AboutPage";
 import VisionPage from "./pages/VisionPage";
 import AIExpertSystem from "./pages/AIExpertSystem";
 import AIMLSystem from "./pages/AIMLSystem";
+import MLPredictionDetailPage from "./pages/MLPredictionDetailPage";
 import AIDeepLearning from "./pages/AIDeepLearning";
 import AIComputerVision from "./pages/AIComputerVision";
 import ChatbotPage from "./pages/ChatbotPage";
 import NotificationsPage from "./pages/NotificationsPage";
 import SettingsPage from "./pages/SettingsPage";
 import StatisticsPage from "./pages/StatisticsPage";
+import SearchHelpPage from "./pages/SearchHelpPage";
+import DateRangePickerPage from "./pages/DateRangePickerPage";
+import WeeklyAnalysisPage from "./pages/WeeklyAnalysisPage";
+import ExportReportPage from "./pages/ExportReportPage";
+import StatDetailPage from "./pages/StatDetailPage";
+import StatCategoryPage from "./pages/StatCategoryPage";
 import ProfilePage from "./pages/ProfilePage";
 import SecurityAnalysis from "./pages/SecurityAnalysis";
 import SensorDoorPage from "./pages/SensorDoorPage";
 import SensorMotionPage from "./pages/SensorMotionPage";
 import CameraLivePage from "./pages/CameraLivePage";
 import HomeModePage from "./pages/HomeModePage";
+import ModeDetailsPage from "./pages/ModeDetailsPage";
 import ActivityAnalysisPage from "./pages/ActivityAnalysisPage";
 import AlarmSettingsPage from "./pages/AlarmSettingsPage";
 import ExpertDecisionPage from "./pages/ExpertDecisionPage";
@@ -142,6 +150,7 @@ const App = () => (
           {/* AI Modules */}
           <Route path="/ai-expert" element={<AIExpertSystem />} />
           <Route path="/ai-ml" element={<AIMLSystem />} />
+          <Route path="/ml-prediction-detail" element={<MLPredictionDetailPage />} />
           <Route path="/ai-deep" element={<AIDeepLearning />} />
           <Route path="/ai-vision" element={<AIComputerVision />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
@@ -150,12 +159,22 @@ const App = () => (
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/statistics" element={<StatisticsPage />} />
+          <Route path="/search-help" element={<SearchHelpPage />} />
+          <Route path="/date-range-picker" element={<DateRangePickerPage />} />
+          <Route path="/weekly-analysis" element={<WeeklyAnalysisPage />} />
+          <Route path="/export-report" element={<ExportReportPage />} />
+          <Route path="/stat-security" element={<StatCategoryPage category="Keamanan" />} />
+          <Route path="/stat-cameras" element={<StatCategoryPage category="Kamera" />} />
+          <Route path="/stat-sensors" element={<StatCategoryPage category="Sensor" />} />
+          <Route path="/stat-detail/:id" element={<StatDetailPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/security-analysis" element={<SecurityAnalysis />} />
           <Route path="/sensor-door" element={<SensorDoorPage />} />
           <Route path="/sensor-motion" element={<SensorMotionPage />} />
           <Route path="/camera-live" element={<CameraLivePage />} />
           <Route path="/home-mode" element={<HomeModePage />} />
+          <Route path="/mode-details" element={<ModeDetailsPage />} />
+          <Route path="/mode-details/:id" element={<ModeDetailsPage />} />
           <Route path="/activity-analysis" element={<ActivityAnalysisPage />} />
           <Route path="/alarm-settings" element={<AlarmSettingsPage />} />
           
