@@ -16,7 +16,10 @@ import VisionPage from "./pages/VisionPage";
 import AIExpertSystem from "./pages/AIExpertSystem";
 import AIMLSystem from "./pages/AIMLSystem";
 import MLPredictionDetailPage from "./pages/MLPredictionDetailPage";
+import MLRiskPatternPage from "./pages/MLRiskPatternPage";
+import MLPredictionDayPage from "./pages/MLPredictionDayPage";
 import AIDeepLearning from "./pages/AIDeepLearning";
+
 import AIComputerVision from "./pages/AIComputerVision";
 import ChatbotPage from "./pages/ChatbotPage";
 import NotificationsPage from "./pages/NotificationsPage";
@@ -119,6 +122,10 @@ import EditAvatarPage from "./pages/EditAvatarPage";
 import NetworkStatusPage from "./pages/NetworkStatusPage";
 import ActivityHistoryPage from "./pages/ActivityHistoryPage";
 import EventDetailPage from "./pages/EventDetailPage";
+import ActivityCalendarPage from "./pages/ActivityCalendarPage";
+import ActivityReportPage from "./pages/ActivityReportPage";
+import ActivityHourDetailPage from "./pages/ActivityHourDetailPage";
+import ActivityDetailPage from "./pages/ActivityDetailPage";
 
 // Deep Learning drill-down pages
 import DLFacesRegisteredPage from "./pages/DLFacesRegisteredPage";
@@ -172,10 +179,12 @@ const App = () => (
           <Route path="/ai-expert" element={<AIExpertSystem />} />
           <Route path="/ai-ml" element={<AIMLSystem />} />
           <Route path="/ml-prediction-detail" element={<MLPredictionDetailPage />} />
+          <Route path="/ml-risk-pattern/:id" element={<MLRiskPatternPage />} />
+          <Route path="/ml-prediction/:id" element={<MLPredictionDayPage />} />
           <Route path="/ai-deep" element={<AIDeepLearning />} />
           <Route path="/ai-vision" element={<AIComputerVision />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
-          
+
           {/* Main Features */}
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/settings" element={<SettingsPage />} />
@@ -252,6 +261,10 @@ const App = () => (
           {/* Security/Activity extras */}
           <Route path="/network-status" element={<NetworkStatusPage />} />
           <Route path="/activity-history" element={<ActivityHistoryPage />} />
+          <Route path="/activity-calendar" element={<ActivityCalendarPage />} />
+          <Route path="/activity-report" element={<ActivityReportPage />} />
+          <Route path="/activity-hour/:hour" element={<ActivityHourDetailPage />} />
+          <Route path="/activity/:id" element={<ActivityDetailPage />} />
           <Route path="/event-detail/:id" element={<EventDetailPage />} />
           <Route path="/event/:id" element={<EventDetailPage />} />
 
