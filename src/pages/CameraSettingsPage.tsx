@@ -1,13 +1,16 @@
+import { useParams } from "react-router-dom";
 import { Camera, Settings2 } from "lucide-react";
 import { PageScaffold } from "@/components/layout/PageScaffold";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 
 const CameraSettingsPage = () => {
+  const { id } = useParams();
+
   return (
     <PageScaffold
       title="Pengaturan Kamera"
-      subtitle="Rekaman, kualitas, dan notifikasi"
+      subtitle={id ? `Untuk kamera ID: ${id}` : "Rekaman, kualitas, dan notifikasi"}
       icon={<Settings2 className="w-5 h-5 text-primary" />}
       metaDescription="Pengaturan kamera SafeHome: rekaman, kualitas video, dan notifikasi kamera."
     >
