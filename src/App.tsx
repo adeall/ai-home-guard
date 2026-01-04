@@ -103,6 +103,11 @@ import CameraSettingsPage from "./pages/CameraSettingsPage";
 import CameraFullscreenPage from "./pages/CameraFullscreenPage";
 import CameraDetailPage from "./pages/CameraDetailPage";
 import CameraRecordingsPage from "./pages/CameraRecordingsPage";
+import CameraRecordingDetailPage from "./pages/CameraRecordingDetailPage";
+import CameraRecordingPlaybackPage from "./pages/CameraRecordingPlaybackPage";
+import CameraSnapshotsPage from "./pages/CameraSnapshotsPage";
+import CameraSnapshotDetailPage from "./pages/CameraSnapshotDetailPage";
+import CameraSnapshotFullscreenPage from "./pages/CameraSnapshotFullscreenPage";
 
 import RateAppPage from "./pages/RateAppPage";
 import DLStrangersPage from "./pages/DLStrangersPage";
@@ -317,9 +322,16 @@ const App = () => (
 
           {/* Camera */}
           <Route path="/camera-settings" element={<CameraSettingsPage />} />
+          <Route path="/camera-settings/:id" element={<CameraSettingsPage />} />
           <Route path="/camera-fullscreen/:id" element={<CameraFullscreenPage />} />
           <Route path="/camera-detail/:id" element={<CameraDetailPage />} />
           <Route path="/camera-recordings" element={<CameraRecordingsPage />} />
+          <Route path="/camera-recordings/:id" element={<CameraRecordingsPage />} />
+          <Route path="/camera-recording/:id/play" element={<CameraRecordingPlaybackPage />} />
+          <Route path="/camera-recording/:id" element={<CameraRecordingDetailPage />} />
+          <Route path="/camera-snapshots/:id" element={<CameraSnapshotsPage />} />
+          <Route path="/camera-snapshot/:id/fullscreen" element={<CameraSnapshotFullscreenPage />} />
+          <Route path="/camera-snapshot/:id" element={<CameraSnapshotDetailPage />} />
 
           {/* Notifications */}
           <Route path="/dl-strangers" element={<DLStrangersPage />} />
